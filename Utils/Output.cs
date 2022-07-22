@@ -22,12 +22,12 @@ namespace RPGMods.Utils
 
         public static void InvalidArguments(Context ctx)
         {
-            ctx.Event.User.SendSystemMessage($"<color=#ff0000ff>Invalid command parameters. Check {ctx.Prefix}help [<command>] for more information.</color>");
+            ctx.Event.User.SendSystemMessage($"<color=#ff0000ff>无效的命令参数. 检查 {ctx.Prefix}帮助 [<command>] 获得更多信息.</color>");
         }
 
         public static void MissingArguments(Context ctx)
         {
-            ctx.Event.User.SendSystemMessage($"<color=#ff0000ff>Missing command parameters. Check {ctx.Prefix}help [<command>] for more information.</color>");
+            ctx.Event.User.SendSystemMessage($"<color=#ff0000ff>缺少命令参数. 检查 {ctx.Prefix}帮助 [<command>] 获得更多信息.</color>");
         }
 
         public static void SendLore(Entity userEntity, string message)

@@ -88,7 +88,7 @@ namespace RPGMods.Systems
                 if (isDatabaseEXPLog)
                 {
                     if (!isLogging) return;
-                    Output.SendLore(userEntity, $"<color=#ffdd00ff>You gain {EXPGained} experience points by slaying a Lv.{UnitLevel.Level} enemy.</color>");
+                    Output.SendLore(userEntity, $"<color=#ffdd00ff> 你获得 {EXPGained} 经验值因为杀死了一个等级.{UnitLevel.Level} 的敌人.</color>");
                     //user.SendSystemMessage($"<color=#ffffffff>Total EXP: {player_experience[SteamID]} - Level: {level} ({getLevelProgress(SteamID)}%)</color>");
                 }
             }

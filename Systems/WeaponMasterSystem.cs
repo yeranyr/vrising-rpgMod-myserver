@@ -72,7 +72,7 @@ namespace RPGMods.Systems
             if (isDatabaseEXPLog)
             {
                 if (!isLogging) return;
-                Output.SendLore(userEntity, $"<color=#ffb700ff>Weapon mastery has increased by {MasteryValue * 0.001}%</color>");
+                Output.SendLore(userEntity, $"<color=#ffb700ff>武器精通提高了 {MasteryValue * 0.001}%</color>");
             }
         }
 
@@ -110,7 +110,7 @@ namespace RPGMods.Systems
                 {
                     int DecayValue = Offline_DecayValue * DecayTicks *-1;
                     
-                    Output.SendLore(userEntity, $"You've been sleeping for {(int)elapsed_time.TotalMinutes} minute(s). Your mastery has decayed by {DecayValue*0.001}%");
+                    Output.SendLore(userEntity, $"你已经睡了 {(int)elapsed_time.TotalMinutes} 分钟. 你的精通减少了 {DecayValue*0.001}%");
 
                     foreach (WeaponType type in Enum.GetValues(typeof(WeaponType)))
                     {

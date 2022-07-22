@@ -6,7 +6,7 @@ using Wetstone.API;
 
 namespace RPGMods.Commands
 {
-    [Command("permission, perm", Usage = "permission <list>|<save>|<reload>|<set> <0-100> <playername>|<steamid>", Description = "Manage commands and user permissions level.")]
+    [Command("permission, perm", Usage = "permission <list>|<save>|<reload>|<set> <0-100> <playername>|<steamid>", Description = "管理命令和用户权限级别.")]
     public static class Permission
     {
         public static void Initialize(Context ctx)
@@ -27,18 +27,18 @@ namespace RPGMods.Commands
                         i++;
                         ctx.Event.User.SendSystemMessage($"{i}. <color=#ffffffff>{Helper.GetNameFromSteamID(result.Key)} : {result.Value}</color>");
                     }
-                    if (i == 0) ctx.Event.User.SendSystemMessage($"<color=#ffffffff>No Result</color>");
+                    if (i == 0) ctx.Event.User.SendSystemMessage($"<color=#ffffffff>无结果</color>");
                     ctx.Event.User.SendSystemMessage($"===================================");
                 }
                 else if (args[0].ToLower().Equals("save"))
                 {
                     PermissionSystem.SaveUserPermission();
-                    ctx.Event.User.SendSystemMessage("Saved user permission to JSON file.");
+                    ctx.Event.User.SendSystemMessage("保存用户权限到JSON文件.");
                 }
                 else if (args[0].ToLower().Equals("reload"))
                 {
                     PermissionSystem.LoadPermissions();
-                    ctx.Event.User.SendSystemMessage("Reloaded permission from JSON file.");
+                    ctx.Event.User.SendSystemMessage("从JSON文件重新加载用户权限.");
                 }
                 else
                 {

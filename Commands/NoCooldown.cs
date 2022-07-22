@@ -8,7 +8,7 @@ using Wetstone.API;
 
 namespace RPGMods.Commands
 {
-    [Command("nocooldown, nocd", Usage = "nocooldown", Description = "Toggles instant cooldown for all abilities.")]
+    [Command("nocooldown, nocd, 无限火力", Usage = "nocooldown", Description = "Toggles instant cooldown for all abilities.")]
     public static class NoCooldown
     {
         public static void Initialize(Context ctx)

@@ -9,7 +9,7 @@ using Wetstone.API;
 
 namespace RPGMods.Commands
 {
-    [Command("help, h", Usage = "help [<command>]", Description = "Shows a list of commands, or details about a command.", ReqPermission = 0)]
+    [Command("help, h, 帮助", Usage = "help [<command>]" , Description = "显示命令列表和帮助", ReqPermission = 0)]
     public static class Help
     {
         public static void Initialize(Context ctx)
@@ -35,9 +35,9 @@ namespace RPGMods.Commands
                         return;
                     }
                     ctx.Event.User.SendSystemMessage($"Help for <color=#00ff00ff>{ctx.Prefix}{aliases.First()}</color>");
-                    ctx.Event.User.SendSystemMessage($"<color=#ffffffff>Aliases: {string.Join(", ", aliases)}</color>");
-                    ctx.Event.User.SendSystemMessage($"<color=#ffffffff>Description: {description}</color>");
-                    ctx.Event.User.SendSystemMessage($"<color=#ffffffff>Usage: {ctx.Prefix}{usage}</color>");
+                    ctx.Event.User.SendSystemMessage($"<color=#ffffffff>别名: {string.Join(", ", aliases)}</color>");
+                    ctx.Event.User.SendSystemMessage($"<color=#ffffffff>描述: {description}</color>");
+                    ctx.Event.User.SendSystemMessage($"<color=#ffffffff>用法: {ctx.Prefix}{usage}</color>");
                     return;
                 }
                 else
@@ -48,7 +48,7 @@ namespace RPGMods.Commands
             }
             catch
             {
-                ctx.Event.User.SendSystemMessage("List of all commands:");
+                ctx.Event.User.SendSystemMessage("所有指令列表:");
                 foreach (Type type in types)
                 {
                     List<string> aliases = type.GetAttributeValue((CommandAttribute cmd) => cmd.Aliases);

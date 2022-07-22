@@ -5,7 +5,7 @@ using Wetstone.API;
 
 namespace RPGMods.Commands
 {
-    [Command("kick", Usage = "kick <playername>", Description = "Kick the specified player out of the server.")]
+    [Command("kick, 踢出", Usage = "kick <playername>", Description = "Kick the specified player out of the server.")]
     public static class Kick
     {
         public static void Initialize(Context ctx)

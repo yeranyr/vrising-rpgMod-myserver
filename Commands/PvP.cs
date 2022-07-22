@@ -7,7 +7,7 @@ using Wetstone.API;
 
 namespace RPGMods.Commands
 {
-    [Command("pvp", Usage = "pvp [<on|off>]", Description = "Toggles PvP Mode for you or display your PvP statistics & the current leaders in the ladder.")]
+    [Command("pvp", Usage = "pvp [<on|off>]", Description = "显示pvp信息")]
     public static class PvP
     {
         public static void Initialize(Context ctx)
@@ -24,8 +24,8 @@ namespace RPGMods.Commands
                 Database.pvpdeath.TryGetValue(SteamID, out var pvp_deaths);
                 Database.pvpkd.TryGetValue(SteamID, out var pvp_kd);
 
-                user.SendSystemMessage($"-- <color=#ffffffff>{CharName}</color> --");
-                user.SendSystemMessage($"K/D: <color=#ffffffff>{pvp_kd} [{pvp_kills}/{pvp_deaths}]</color>");
+                user.SendSystemMessage($"--- <color=#ffffffff>{CharName}</color> ---");
+                user.SendSystemMessage($"击杀/死亡(K/D): <color=#ffffffff>{pvp_kd} [{pvp_kills}/{pvp_deaths}]</color>");
 
                 if (PvPSystem.isLadderEnabled)
                 {
@@ -38,7 +38,7 @@ namespace RPGMods.Commands
                         i++;
                         user.SendSystemMessage($"{i}. <color=#ffffffff>{Helper.GetNameFromSteamID(result.Key)} : {result.Value}</color>");
                     }
-                    if (i == 0) user.SendSystemMessage($"<color=#ffffffff>No Result</color>");
+                    if (i == 0) user.SendSystemMessage($"<color=#ffffffff>无结果</color>");
                     user.SendSystemMessage($"===================================");
                 }
             }

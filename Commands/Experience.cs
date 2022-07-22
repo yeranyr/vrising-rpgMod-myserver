@@ -6,7 +6,7 @@ using Wetstone.API;
 
 namespace RPGMods.Commands
 {
-    [Command("experience, exp, xp", Usage = "experience [<log> <on>|<off>]", Description = "Shows your currect experience and progression to next level, or toggle the exp gain notification.")]
+    [Command("experience, exp, xp, 经验", Usage = "experience [<log> <on>|<off>]", Description = "显示你的当前经验和距离升到下一等级的进度.")]
     public static class Experience
     {
         private static EntityManager entityManager = VWorld.Server.EntityManager;

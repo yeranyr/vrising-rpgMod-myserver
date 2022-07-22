@@ -6,7 +6,7 @@ using Wetstone.API;
 
 namespace RPGMods.Commands
 {
-    [Command("heat", Usage = "heat", Description = "Shows your current wanted level.")]
+    [Command("heat, 通缉", Usage = "heat", Description = "显示你的猎杀通缉信息.")]
     public static class Heat
     {
         private static EntityManager entityManager = VWorld.Server.EntityManager;
@@ -54,19 +54,19 @@ namespace RPGMods.Commands
             HunterHunted.HeatManager(userEntity, charEntity, false);
 
             Cache.heatlevel.TryGetValue(SteamID, out var human_heatlevel);
-            if (human_heatlevel >= 3000) Output.SendLore(userEntity,$"<color=#0048ffff>[Humans]</color> <color=#c90e21ff>YOU ARE A MENACE...</color>");
-            else if (human_heatlevel >= 2000) Output.SendLore(userEntity, $"<color=#0048ffff>[Humans]</color> <color=#c90e21ff>The Vampire Hunters are hunting you...</color>");
-            else if (human_heatlevel >= 1000) Output.SendLore(userEntity, $"<color=#0048ffff>[Humans]</color> <color=#c90e21ff>Humans elite squads are hunting you...</color>");
-            else if (human_heatlevel >= 500) Output.SendLore(userEntity, $"<color=#0048ffff>[Humans]</color> <color=#c4515cff>Humans soldiers are hunting you...</color>");
-            else if (human_heatlevel >= 250) Output.SendLore(userEntity, $"<color=#0048ffff>[Humans]</color> <color=#c9999eff>The humans are hunting you...</color>");
-            else Output.SendLore(userEntity, $"<color=#0048ffff>[Humans]</color> <color=#ffffffff>You're currently anonymous...</color>");
+            if (human_heatlevel >= 3000) Output.SendLore(userEntity,$"<color=#0048ffff>[光明教会]</color> <color=#c90e21ff>教会已经无法阻止你了，你就是恐惧的化身...</color>");
+            else if (human_heatlevel >= 2000) Output.SendLore(userEntity, $"<color=#0048ffff>[光明教会]</color> <color=#c90e21ff>吸血鬼猎人加入了猎杀，他们是你永恒的宿敌...</color>");
+            else if (human_heatlevel >= 1000) Output.SendLore(userEntity, $"<color=#0048ffff>[光明教会]</color> <color=#c90e21ff>教会重整了猎杀队，人类的顶尖战力们正在追捕你...</color>");
+            else if (human_heatlevel >= 500) Output.SendLore(userEntity, $"<color=#0048ffff>[光明教会]</color> <color=#c4515cff>教会军队开始了对你的猎杀，只有精英士兵才能加入战斗...</color>");
+            else if (human_heatlevel >= 250) Output.SendLore(userEntity, $"<color=#0048ffff>[光明教会]</color> <color=#c9999eff>教会张贴了对你的悬赏，普通的战士跃跃欲试...</color>");
+            else Output.SendLore(userEntity, $"<color=#0048ffff>[光明教会]</color> <color=#ffffffff>你现在对教会来说是无名小卒...</color>");
 
             Cache.bandit_heatlevel.TryGetValue(SteamID, out var bandit_heatlevel);
-            if (bandit_heatlevel >= 2000) Output.SendLore(userEntity, $"<color=#ff0000ff>[Bandits]</color> <color=#c90e21ff>The bandits really wants you dead...</color>");
-            else if (bandit_heatlevel >= 1000) Output.SendLore(userEntity, $"<color=#ff0000ff>[Bandits]</color> <color=#c90e21ff>A large bandit squads are hunting you...</color>");
-            else if (bandit_heatlevel >= 500) Output.SendLore(userEntity, $"<color=#ff0000ff>[Bandits]</color> <color=#c4515cff>A small bandit squads are hunting you...</color>");
-            else if (bandit_heatlevel >= 250) Output.SendLore(userEntity,$"<color=#ff0000ff>[Bandits]</color> <color=#c9999eff>The bandits are hunting you...</color>");
-            else Output.SendLore(userEntity, $"<color=#ff0000ff>[Bandits]</color> <color=#ffffffff>The bandits doesn't recognize you...</color>");
+            if (bandit_heatlevel >= 2000) Output.SendLore(userEntity, $"<color=#ff0000ff>[强盗团]</color> <color=#c90e21ff>强盗大王也想杀死你，但他无能为力...</color>");
+            else if (bandit_heatlevel >= 1000) Output.SendLore(userEntity, $"<color=#ff0000ff>[强盗团]</color> <color=#c90e21ff>强盗团全体都对你恨之入骨...</color>");
+            else if (bandit_heatlevel >= 500) Output.SendLore(userEntity, $"<color=#ff0000ff>[强盗团]</color> <color=#c4515cff>强盗精英们加入了埋伏你的队伍...</color>");
+            else if (bandit_heatlevel >= 250) Output.SendLore(userEntity,$"<color=#ff0000ff>[强盗团]</color> <color=#c9999eff>强盗小队开始埋伏你...</color>");
+            else Output.SendLore(userEntity, $"<color=#ff0000ff>[强盗团]</color> <color=#ffffffff>强盗们从未听说过你...</color>");
 
             if (ctx.Args.Length == 1 && user.IsAdmin)
             {

@@ -8,7 +8,7 @@ using Wetstone.API;
 
 namespace RPGMods.Commands
 {
-    [Command("spawnnpc, spn", "spawnnpc <Prefab Name/GUID> [<Amount>] [<Waypoint>]", "Spawns a NPC to a previously created waypoint.")]
+    [Command("spawnnpc, spn, 生成", "spawnnpc <Prefab Name/GUID> [<Amount>] [<Waypoint>]", "Spawns a NPC to a previously created waypoint.")]
     public static class SpawnNPC
     {
         public static void Initialize(Context ctx)

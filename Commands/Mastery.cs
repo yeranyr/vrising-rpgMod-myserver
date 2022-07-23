@@ -104,7 +104,8 @@ namespace RPGMods.Commands
                     return;
                 }
 
-                ctx.Event.User.SendSystemMessage("-- <color=#ffffffff>武器精通</color> --");
+
+                ctx.Event.User.SendSystemMessage("================= <color=#ffffffff>武器精通</color>==================");
                 ctx.Event.User.SendSystemMessage($"单手剑:<color=#ffffffff> {(double)MasteryData.Sword * 0.001}%</color> (攻击力 <color=#75FF33FF>↑</color>, 攻击速度 <color=#75FF33FF>↑</color>)");
                 ctx.Event.User.SendSystemMessage($"长矛:<color=#ffffffff> {(double)MasteryData.Spear * 0.001}%</color> (攻击力 <color=#75FF33FF>↑↑</color>)");
                 ctx.Event.User.SendSystemMessage($"斧头:<color=#ffffffff> {(double)MasteryData.Axes * 0.001}%</color> (攻击力 <color=#75FF33FF>↑</color>, 生命值 <color=#75FF33FF>↑</color>)");
@@ -114,6 +115,7 @@ namespace RPGMods.Commands
                 ctx.Event.User.SendSystemMessage($"空手:<color=#ffffffff> {(double)MasteryData.None * 0.001}%</color> (攻击力 <color=#75FF33FF>↑↑</color>, 移动速度 <color=#75FF33FF>↑↑</color>)");
                 ctx.Event.User.SendSystemMessage($"技能:<color=#ffffffff> {(double)MasteryData.Spell * 0.001}%</color> (冷却 <color=#75FF33FF>↓↓</color>)");
                 ctx.Event.User.SendSystemMessage($"十字弩:<color=#ffffffff> {(double)MasteryData.Crossbow * 0.001}%</color> (暴击 <color=#75FF33FF>↑↑</color>)");
+                ctx.Event.User.SendSystemMessage("=========================================");
                 //ctx.Event.User.SendSystemMessage($"Fishing Pole: <color=#ffffffff>{(double)MasteryData.FishingPole * 0.001}%</color> (??? ↑↑)");
             }
         }

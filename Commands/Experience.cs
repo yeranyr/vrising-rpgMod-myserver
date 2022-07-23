@@ -6,7 +6,7 @@ using Wetstone.API;
 
 namespace RPGMods.Commands
 {
-    [Command("experience, exp, xp, 经验", Usage = "experience [<log> <on>|<off>]", Description = "显示你的当前经验和距离升到下一等级的进度.")]
+    [Command("experience, exp, xp, 经验, 等级", Usage = "experience [<log> <on>|<off>]", Description = "显示你的当前经验和距离升到下一等级的进度.")]
     public static class Experience
     {
         private static EntityManager entityManager = VWorld.Server.EntityManager;
@@ -75,7 +75,7 @@ namespace RPGMods.Commands
                 int userLevel = ExperienceSystem.getLevel(SteamID);
                 user.SendSystemMessage($"-- <color=#ffffffff>{CharName}</color> --");
                 user.SendSystemMessage(
-                    $"Level:<color=#ffffffff> {userLevel}</color> (<color=#ffffffff>{ExperienceSystem.getLevelProgress(SteamID)}%</color>) " +
+                    $"等级:<color=#ffffffff> {userLevel}</color> (<color=#ffffffff>{ExperienceSystem.getLevelProgress(SteamID)}%</color>) " +
                     $" [ XP:<color=#ffffffff> {ExperienceSystem.getXp(SteamID)}</color>/<color=#ffffffff>{ExperienceSystem.convertLevelToXp(userLevel + 1)}</color> ]");
             }
         }

@@ -76,7 +76,7 @@ namespace RPGMods.Commands
                 user.SendSystemMessage($"-- <color=#ffffffff>{CharName}</color> --");
                 user.SendSystemMessage(
                     $"等级:<color=#ffffffff> {userLevel}</color> (<color=#ffffffff>{ExperienceSystem.getLevelProgress(SteamID)}%</color>) " +
-                    $" [ XP:<color=#ffffffff> {ExperienceSystem.getXp(SteamID)}</color>/<color=#ffffffff>{ExperienceSystem.convertLevelToXp(userLevel + 1)}</color> ]");
+                    $" [ 经验:<color=#ffffffff> {ExperienceSystem.getXp(SteamID)}</color>/<color=#ffffffff>{ExperienceSystem.convertLevelToXp(userLevel + 1)}</color> ]");
             }
         }
     }

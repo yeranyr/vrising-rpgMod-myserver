@@ -34,7 +34,7 @@ namespace RPGMods.Commands
                         ctx.Event.User.SendSystemMessage($"Specified command not found.");
                         return;
                     }
-                    ctx.Event.User.SendSystemMessage($"Help for <color=#00ff00ff>{ctx.Prefix}{aliases.First()}</color>");
+                    ctx.Event.User.SendSystemMessage($"帮助信息： <color=#00ff00ff>{ctx.Prefix}{aliases.First()}</color>");
                     ctx.Event.User.SendSystemMessage($"<color=#ffffffff>别名: {string.Join(", ", aliases)}</color>");
                     ctx.Event.User.SendSystemMessage($"<color=#ffffffff>描述: {description}</color>");
                     ctx.Event.User.SendSystemMessage($"<color=#ffffffff>用法: {ctx.Prefix}{usage}</color>");
@@ -61,13 +61,13 @@ namespace RPGMods.Commands
                     bool send = false;
                     if (userPermission < reqPermission && ctx.Event.User.IsAdmin)
                     {
-                        s = $"<color=#00ff00ff>{ctx.Prefix}{string.Join(", ", aliases)}</color> - <color=#ff0000ff>[{reqPermission}]</color> <color=#ffffffff>{description}</color>";
+                        s = $"<color=#00ff00ff>{ctx.Prefix}{string.Join("/ ", aliases)}</color> - <color=#ff0000ff>[{reqPermission}]</color> <color=#ffffffff>{description}</color>";
                         //s = $"<color=#00ff00ff>{ctx.Prefix}{aliases.First()}/{string.Join(", ", aliases)}</color> - <color=#ff0000ff>[ADMIN]</color> <color=#ffffffff>{description}</color>";
                         send = true;
                     }
                     else if (userPermission >= reqPermission)
                     {
-                        s = $"<color=#00ff00ff>{ctx.Prefix}{string.Join(", ", aliases)}</color> - <color=#ffffffff>{description}</color>";
+                        s = $"<color=#00ff00ff>{ctx.Prefix}{string.Join("/ ", aliases)}</color> - <color=#ffffffff>{description}</color>";
                         //s = $"<color=#00ff00ff>{ctx.Prefix}{aliases.First()}/{string.Join(", ", aliases)}</color> - <color=#ffffffff>{description}</color>";
                         send = true;
                     }

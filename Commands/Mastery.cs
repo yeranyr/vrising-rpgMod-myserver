@@ -79,7 +79,7 @@ namespace RPGMods.Commands
                     if (ctx.Args[1].ToLower().Equals("on"))
                     {
                         Database.player_log_mastery[SteamID] = true;
-                        ctx.Event.User.SendSystemMessage($"Mastery gain is now logged.");
+                        ctx.Event.User.SendSystemMessage($"精通增益记录中.");
                         return;
                     }
                     else if (ctx.Args[1].ToLower().Equals("off"))
@@ -106,15 +106,15 @@ namespace RPGMods.Commands
 
 
                 ctx.Event.User.SendSystemMessage("================= <color=#ffffffff>武器精通</color>==================");
-                ctx.Event.User.SendSystemMessage($"单手剑:<color=#ffffffff> {(double)MasteryData.Sword * 0.001}%</color> (攻击力 <color=#75FF33FF>↑</color>, 攻击速度 <color=#75FF33FF>↑</color>)");
-                ctx.Event.User.SendSystemMessage($"长矛:<color=#ffffffff> {(double)MasteryData.Spear * 0.001}%</color> (攻击力 <color=#75FF33FF>↑↑</color>)");
-                ctx.Event.User.SendSystemMessage($"斧头:<color=#ffffffff> {(double)MasteryData.Axes * 0.001}%</color> (攻击力 <color=#75FF33FF>↑</color>, 生命值 <color=#75FF33FF>↑</color>)");
-                ctx.Event.User.SendSystemMessage($"死神镰刀:<color=#ffffffff> {(double)MasteryData.Scythe * 0.001}%</color> (攻击力 <color=#75FF33FF>↑</color>, 暴击 <color=#75FF33FF>↑</color>)");
-                ctx.Event.User.SendSystemMessage($"反手刃:<color=#ffffffff> {(double)MasteryData.Slashers * 0.001}%</color> (暴击 <color=#75FF33FF>↑</color>, 移动速度 <color=#75FF33FF>↑</color>)");
+                ctx.Event.User.SendSystemMessage($"单手剑:<color=#ffffffff> {(double)MasteryData.Sword * 0.001}%</color> (物理攻击力 <color=#75FF33FF>↑</color>, 法术攻击力 <color=#75FF33FF>↑</color>)");
+                ctx.Event.User.SendSystemMessage($"长矛:<color=#ffffffff> {(double)MasteryData.Spear * 0.001}%</color> (物理攻击力 <color=#75FF33FF>↑↑</color>)");
+                ctx.Event.User.SendSystemMessage($"斧头:<color=#ffffffff> {(double)MasteryData.Axes * 0.001}%</color> (物理攻击力 <color=#75FF33FF>↑</color>, 生命值 <color=#75FF33FF>↑</color>)");
+                ctx.Event.User.SendSystemMessage($"死神镰刀:<color=#ffffffff> {(double)MasteryData.Scythe * 0.001}%</color> (物理攻击力 <color=#75FF33FF>↑</color>, 物理暴击率 <color=#75FF33FF>↑</color>)");
+                ctx.Event.User.SendSystemMessage($"反手刃:<color=#ffffffff> {(double)MasteryData.Slashers * 0.001}%</color> (物理暴击率 <color=#75FF33FF>↑</color>, 移动速度 <color=#75FF33FF>↑</color>)");
                 ctx.Event.User.SendSystemMessage($"锤杖:<color=#ffffffff> {(double)MasteryData.Mace * 0.001}%</color> (生命值 <color=#75FF33FF>↑↑</color>)");
-                ctx.Event.User.SendSystemMessage($"空手:<color=#ffffffff> {(double)MasteryData.None * 0.001}%</color> (攻击力 <color=#75FF33FF>↑↑</color>, 移动速度 <color=#75FF33FF>↑↑</color>)");
-                ctx.Event.User.SendSystemMessage($"技能:<color=#ffffffff> {(double)MasteryData.Spell * 0.001}%</color> (冷却 <color=#75FF33FF>↓↓</color>)");
-                ctx.Event.User.SendSystemMessage($"十字弩:<color=#ffffffff> {(double)MasteryData.Crossbow * 0.001}%</color> (暴击 <color=#75FF33FF>↑↑</color>)");
+                ctx.Event.User.SendSystemMessage($"空手:<color=#ffffffff> {(double)MasteryData.None * 0.001}%</color> (物理攻击力 <color=#75FF33FF>↑↑</color>, 移动速度 <color=#75FF33FF>↑↑</color>)");
+                ctx.Event.User.SendSystemMessage($"技能(空手):<color=#ffffffff> {(double)MasteryData.Spell * 0.001}%</color> (冷却缩减 <color=#75FF33FF>↓↓</color>)");
+                ctx.Event.User.SendSystemMessage($"十字弩:<color=#ffffffff> {(double)MasteryData.Crossbow * 0.001}%</color> (物理暴击率 <color=#75FF33FF>↑↑</color>)");
                 ctx.Event.User.SendSystemMessage("=========================================");
                 //ctx.Event.User.SendSystemMessage($"Fishing Pole: <color=#ffffffff>{(double)MasteryData.FishingPole * 0.001}%</color> (??? ↑↑)");
             }

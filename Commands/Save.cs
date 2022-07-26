@@ -27,10 +27,10 @@ namespace RPGMods.Commands
                 }
             }
             
-            ctx.Event.User.SendSystemMessage($"Saving data....");
+            ctx.Event.User.SendSystemMessage($"保存数据中....");
             //AutoSaveSystem.SaveDatabase();
             VWorld.Server.GetExistingSystem<TriggerPersistenceSaveSystem>().TriggerSave(SaveReason.ManualSave, name);
-            ctx.Event.User.SendSystemMessage($"Data save complete.");
+            ctx.Event.User.SendSystemMessage($"数据保存完成.");
         }
     }
 }
